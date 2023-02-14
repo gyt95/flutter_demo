@@ -100,6 +100,7 @@ class _MyHomePageState extends State<MyHomePage> {
       }
       return v;
     }).toList();
+
     setState(() {
       list = arr;
     });
@@ -124,6 +125,30 @@ class _MyHomePageState extends State<MyHomePage> {
     print('...');
   }
 
+  void _checkBeforeSubmit(String value, item) {
+    if (value.trim() == '') {
+      setState(() {
+        _errorText = '失败! 内容不能为空';
+      });
+    } else {
+      var lastValue = value.trim();
+      if (lastValue.length != value.length) {
+        setState(() {
+          _errorText = '失败! 包含多余空格';
+        });
+      } else {
+        if (item) {
+          _update(value, item);
+        } else {
+          _submit(value);
+        }
+        setState(() {
+          _errorText = null;
+        });
+      }
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -142,24 +167,8 @@ class _MyHomePageState extends State<MyHomePage> {
                   hintText: '请输入内容',
                   errorText: _errorText,
                 ),
-                onSubmitted: (String value) {
-                  if (value.trim() == '') {
-                    setState(() {
-                      _errorText = '失败! 内容不能为空';
-                    });
-                  } else {
-                    var lastValue = value.trim();
-                    if (lastValue.length != value.length) {
-                      setState(() {
-                        _errorText = '失败! 包含多余空格';
-                      });
-                    } else {
-                      _submit(value);
-                      setState(() {
-                        _errorText = null;
-                      });
-                    }
-                  }
+                onSubmitted: (value) {
+                  _checkBeforeSubmit(value, 'create');
                 }),
             Container(
                 margin: const EdgeInsets.only(top: 10),
@@ -188,23 +197,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                       errorText: _errorText,
                                     ),
                                     onSubmitted: (String value) {
-                                      if (value.trim() == '') {
-                                        setState(() {
-                                          _errorText = '失败! 内容不能为空';
-                                        });
-                                      } else {
-                                        var lastValue = value.trim();
-                                        if (lastValue.length != value.length) {
-                                          setState(() {
-                                            _errorText = '失败! 包含多余空格';
-                                          });
-                                        } else {
-                                          _update(value, item);
-                                          setState(() {
-                                            _errorText = null;
-                                          });
-                                        }
-                                      }
+                                      _checkBeforeSubmit(value, item);
                                     })),
                         ElevatedButton(
                           onPressed: () {
