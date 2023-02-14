@@ -31,6 +31,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   List<String> list = <String>[];
+  String? _errorText;
 
   void _submit(value) {
     setState(() {
@@ -55,26 +56,30 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            TextField(onSubmitted: (String value) {
-              _submit(value);
-            }),
-            ListView(
-              children: list.map((item) {
-                return TodoItem(data: item, remove: _remove);
-              }).toList(),
-            ),
-            // ListView.builder(
-            //   padding: const EdgeInsets.all(8),
-            //   itemBuilder: (BuildContext context, int index) {
-            //     return Text('1');
-            //     // return Container(
-            //     //   height: 50,
-            //     //   child: Center(child: Text('Entry ${list[index]}')),
-            //     // );
-            //   },
-            //   // separatorBuilder: (BuildContext context, int index) =>
-            //   // const Divider(),
-            // ),
+            TextField(
+                decoration: InputDecoration(
+                  hintText: '请输入内容',
+                  errorText: _errorText,
+                ),
+                onSubmitted: (String value) {
+                  if (value.trim() == '') {
+                    setState(() {
+                      _errorText = '不能为空';
+                    });
+                  } else {
+                    var lastValue = value.trim();
+                    if (lastValue.length != value.length) {
+                      setState(() {
+                        _errorText = '包含多余空格';
+                      });
+                    } else {
+                      _submit(value);
+                      setState(() {
+                        _errorText = null;
+                      });
+                    }
+                  }
+                }),
           ],
         ),
       )),
