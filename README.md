@@ -1,16 +1,19 @@
 # flutter_demo
 
-A new Flutter project.
+A Todo List.
 
-## Getting Started
+## Install
 
-This project is a starting point for a Flutter application.
+**Note**: Make sure the Flutter development environment has been set up. Remember open a device.
 
-A few resources to get you started if this is your first Flutter project:
+In the command terminal, run the following commands.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+    $ git clone https://github.com/gyt95/flutter_demo.git
+    $ cd flutter_demo
+    $ flutter run -v -d emulator-5554
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Or you can open lib/main.dart and press F5 to run the app if you use Visual Studio Code.
+
+## Screenshots
+
+![screenshot1](https://github.com/gyt95/flutter_demo/blob/main/screenshots/image.png)
