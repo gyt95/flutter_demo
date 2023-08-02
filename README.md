@@ -8,9 +8,9 @@ A Todo List.
 
 In the command terminal, run the following commands.
 
-    $ git clone https://github.com/gyt95/flutter_demo.git
-    $ cd flutter_demo
-    $ flutter run -v -d emulator-5554
+    git clone https://github.com/gyt95/flutter_demo.git
+    cd flutter_demo
+    flutter run -v -d emulator-5554
 
 Or you can open lib/main.dart and press F5 to run the app if you use Visual Studio Code.
 
