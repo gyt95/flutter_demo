@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_demo/car/car_buying_guide_list.dart';
 import 'package:flutter_demo/car/cell_group_list.dart';
 import 'package:flutter_demo/car/owner_eva_list.dart';
+import 'package:flutter_demo/car/sales_consultant.dart';
 import 'package:flutter_demo/car/select_service_list.dart';
 
 void main() {
@@ -54,6 +55,7 @@ class _CarHomePageState extends State<CarHomePage> {
           padding: EdgeInsets.all(10),
           child: ListView(
             children: [
+              SalesConsultant(),
               CarBuyingGuideList(),
               Expanded(
                 child: SelectServiceList(),
