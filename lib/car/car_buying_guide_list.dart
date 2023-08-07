@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_demo/car/car_buying_guide_item.dart';
+import 'package:flutter_demo/car/common/card_header.dart';
 
 class CarBuyingGuideList extends StatelessWidget {
   final List<CarBuyingGuideItemMap> list;
@@ -40,32 +41,7 @@ class CarBuyingGuideList extends StatelessWidget {
           child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch, // 列表宽度设置为100%
               children: [
-                Row(
-                  children: [
-                    Text(
-                      'Car buying guide',
-                      style: TextStyle(
-                        color: Color(0xFFFFFFFF),
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    Spacer(),
-                    SizedBox(width: 8.0),
-                    Row(
-                      children: [
-                        Text('More',
-                            style: TextStyle(color: Color(0x73FFFFFF))),
-                        SizedBox(width: 4.0),
-                        Image.asset(
-                          'assets/car/arrow_more.png', // 替换为实际的图像路径
-                          width: 16.0,
-                          height: 16.0,
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
+                CardHeader(title: 'Car buying guide'),
                 SizedBox(height: 22.0), // Row和列表之间的间距
                 ...list.map((item) {
                   return Padding(
