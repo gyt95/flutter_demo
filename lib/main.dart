@@ -35,8 +35,10 @@ class CarHomePage extends StatefulWidget {
 
 class _CarHomePageState extends State<CarHomePage> {
   int _selectedIndex = 0;
+
   static const TextStyle optionStyle =
       TextStyle(fontSize: 30, color: Colors.white, fontWeight: FontWeight.bold);
+
   static List<Widget Function()> _widgetOptions = [
     () => Text(
           'Index 0: Home',
@@ -95,15 +97,37 @@ class _CarHomePageState extends State<CarHomePage> {
          */
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
+            icon: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Image.asset(
+                  'assets/car/bottom_navbar_discover.png',
+                  width: 20,
+                  height: 20,
+                ),
+                SizedBox(height: 5), // 添加 5dp 的垂直间距
+              ],
+            ),
             label: 'Discover',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.business),
-            label: '',
-          ),
+              icon: Image.asset(
+                'assets/car/bottom_navbar_logo.png',
+                width: 60,
+                height: 60,
+              ),
+              label: ''),
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
+            icon: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Image.asset(
+                  'assets/car/bottom_navbar_community.png',
+                  width: 20,
+                ),
+                SizedBox(height: 5), // 添加 5dp 的垂直间距
+              ],
+            ),
             label: 'Community',
           ),
         ],
