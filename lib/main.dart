@@ -57,9 +57,7 @@ class _CarHomePageState extends State<CarHomePage> {
             children: [
               SalesConsultant(),
               CarBuyingGuideList(),
-              Expanded(
-                child: SelectServiceList(),
-              ),
+              SelectServiceList(),
               CellGroupList(),
               OwnerEvaList(),
             ],
