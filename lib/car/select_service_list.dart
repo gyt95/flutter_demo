@@ -17,7 +17,7 @@ class _SelectServiceListState extends State<SelectServiceList> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 20),
+      // margin: const EdgeInsets.symmetric(horizontal: 20),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
