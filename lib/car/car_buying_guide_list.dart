@@ -52,15 +52,15 @@ class CarBuyingGuideList extends StatelessWidget {
                 }).toList()
               ]),
           /**
-               * 不使用toList()会报错,尝试将一个类型为Iterable<CarBuyingGuideItem>的参数赋值给类型为List<Widget>的参数,但它们的类型不匹配
-               * List<Widget>表示一个包含Widget对象的列表
-               * Iterable<CarBuyingGuideItem>表示一个迭代CarBuyingGuideItem对象的可迭代对象
-               * 
-               * 办法:通过使用map()函数将CarBuyingGuideItem对象转换为Widget对象,然后将其放入一个新的列表中
-               * map()函数将每个CarBuyingGuideItem对象转换为相应的Widget对象
-               * 返回一个新的Iterable对象
-               * 通过调用toList()方法将Iterable对象转换为一个新的List<Widget>对象
-               */
+             * 不使用toList()会报错,尝试将一个类型为Iterable<CarBuyingGuideItem>的参数赋值给类型为List<Widget>的参数,但它们的类型不匹配
+             * List<Widget>表示一个包含Widget对象的列表
+             * Iterable<CarBuyingGuideItem>表示一个迭代CarBuyingGuideItem对象的可迭代对象
+             * 
+             * 办法:通过使用map()函数将CarBuyingGuideItem对象转换为Widget对象,然后将其放入一个新的列表中
+             * map()函数将每个CarBuyingGuideItem对象转换为相应的Widget对象
+             * 返回一个新的Iterable对象
+             * 通过调用toList()方法将Iterable对象转换为一个新的List<Widget>对象
+             */
         )
       ],
     ));
